@@ -65,6 +65,19 @@ module.exports = (resolve, rootDir, isEjecting) => {
       'jest-watch-typeahead/filename',
       'jest-watch-typeahead/testname',
     ],
+    projects: [
+      {
+        displayName: 'test',
+      },
+      {
+        displayName: 'lint',
+        runner: 'jest-runner-eslint',
+        testMatch: [
+          '<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}',
+          '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}',
+        ],
+      },
+    ],
   };
   if (rootDir) {
     config.rootDir = rootDir;
